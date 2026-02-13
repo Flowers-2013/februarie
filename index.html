@@ -5,26 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Februarie 💗</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      (function () {
+        const parolaCorecta = "Toffi";
+        const intrare = prompt("Parola pentru acces(hint: numele pisicii tale 🐈):");
+
+        if (intrare !== parolaCorecta) {
+          document.documentElement.innerHTML = `
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>Acces interzis</title>
+              <style>
+                body{
+                  margin:0;
+                  min-height:100vh;
+                  display:grid;
+                  place-items:center;
+                  font-family:system-ui;
+                  background:#fff1f6;
+                  color:#2b1b22;
+                  padding:24px;
+                }
+                .box{
+                  background:#ffffffcc;
+                  border:1px solid #ffd0df;
+                  border-radius:22px;
+                  padding:24px;
+                  text-align:center;
+                  max-width:520px;
+                  box-shadow:0 18px 50px rgba(43,27,34,.10);
+                }
+                h1{margin:0 0 10px;}
+                p{margin:0;opacity:.8;}
+              </style>
+            </head>
+            <body>
+              <div class="box">
+                <h1>Acces interzis 😌</h1>
+                <p>Hint: întreabă-ți iubita 💗</p>
+              </div>
+            </body>
+          `;
+          throw new Error("Access denied");
+        }
+      })();
+    </script>
+
   </head>
 
   <body>
-    <script>
-  (function () {
-    const parolaCorecta = "Bella";   // <- aici o schimbi
-    const intrare = prompt("Parola pentru acces (hint: numele pisicii tale)");
-
-    if (intrare !== parolaCorecta) {
-      document.body.innerHTML = `
-        <main style="min-height:100vh;display:grid;place-items:center;font-family:system-ui;text-align:center;padding:24px;">
-          <div style="max-width:520px;">
-            <h1 style="margin:0 0 10px;">Acces interzis 😌</h1>
-            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita </p>
-          </div>
-        </main>
-      `;
-    }
-  })();
-</script>
     <main class="container">
       <header class="header">
         <div class="badge">💗 Valentine’s special</div>
@@ -68,4 +99,6 @@
     </main>
   </body>
 </html>
+
+
 
