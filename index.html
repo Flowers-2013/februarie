@@ -10,15 +10,15 @@
   <body>
     <script>
   (function () {
-    const parolaCorecta = "sakura14";   // <- aici o schimbi
-    const intrare = prompt("Parola pentru acces 💗");
+    const parolaCorecta = "Bella";   // <- aici o schimbi
+    const intrare = prompt("Parola pentru acces (hint: numele pisicii tale)");
 
     if (intrare !== parolaCorecta) {
       document.body.innerHTML = `
         <main style="min-height:100vh;display:grid;place-items:center;font-family:system-ui;text-align:center;padding:24px;">
           <div style="max-width:520px;">
             <h1 style="margin:0 0 10px;">Acces interzis 😌</h1>
-            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita 🩷</p>
+            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita </p>
           </div>
         </main>
       `;
@@ -68,3 +68,4 @@
     </main>
   </body>
 </html>
+
