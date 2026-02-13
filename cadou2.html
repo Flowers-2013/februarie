@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+    <title>Cadou 2 💌 Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+  (function () {
+    const parolaCorecta = "sakura14";   // <- aici o schimbi
+    const intrare = prompt("Parola pentru acces 💗");
+
+    if (intrare !== parolaCorecta) {
+      document.body.innerHTML = `
+        <main style="min-height:100vh;display:grid;place-items:center;font-family:system-ui;text-align:center;padding:24px;">
+          <div style="max-width:520px;">
+            <h1 style="margin:0 0 10px;">Acces interzis 😌</h1>
+            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita 🩷</p>
+          </div>
+        </main>
+      `;
+    }
+  })();
+</script>
+
+    <main class="container page">
+      <header class="header">
+        <div class="badge">💌 CADOUL 2</div>
+        <h1>Quiz-ul nostru</h1>
+        <p class="subtitle">Ai 4 întrebări. Dacă le faci pe toate corect, primești cadoul. 😌</p>
+      </header>
+
+      <section class="card panel quiz">
+        <form id="quizForm">
+          <!-- Întrebarea 1 -->
+          <div class="q">
+            <h3>1) Unde ne-am văzut prima dată? (atențiee)</h3>
+            <label><input type="radio" name="q1" value="a"> La facultate</label>
+            <label><input type="radio" name="q1" value="b"> La Sakura</label>
+            <label><input type="radio" name="q1" value="c"> Pe stradă</label>
+          </div>
+
+          <!-- Întrebarea 2 -->
+          <div class="q">
+            <h3>2) Cine este ”boss-ul” din relație?</h3>
+            <label><input type="radio" name="q2" value="a"> Eu (Cati)</label>
+            <label><input type="radio" name="q2" value="b"> Andrei (eww)</label>
+            <label><input type="radio" name="q2" value="c"> Amândoi</label>
+          </div>
+
+          <!-- Întrebarea 3 -->
+          <div class="q">
+            <h3>3) Ce îmi place cel mai mult să beau?</h3>
+            <label><input type="radio" name="q3" value="a"> Ceai</label>
+            <label><input type="radio" name="q3" value="b"> Apă</label>
+            <label><input type="radio" name="q3" value="c"> Pepsi cu lămâie</label>
+          </div>
+
+          <!-- Întrebarea 4 -->
+          <div class="q">
+            <h3>4) Cine pornește certurile? </h3>
+            <label><input type="radio" name="q4" value="a"> Tu</label>
+            <label><input type="radio" name="q4" value="b"> Tu</label>
+            <label><input type="radio" name="q4" value="c"> Tu</label>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn" id="checkBtn">Verifică răspunsurile →</button>
+          </div>
+
+          <p class="quiz-result" id="resultText"></p>
+        </form>
+      </section>
+
+      <!-- PREMIUL (ascuns până când e totul corect) -->
+     <section class="card panel prize" id="prizeBox" style="display:none; text-align:center;">
+
+  <h2 class="prize-title">AI CÂȘTIGAT PREMIUL CEL MARE 🎉</h2>
+
+  <p class="prize-sub">
+    Ai demonstrat că mă cunoști prea bine.
+    
+  </p>
+
+  <video class="prize-img" autoplay loop muted playsinline>
+    <source src="img/hah.mp4" type="video/mp4">
+  </video>
+
+  <p class="prize-text">
+    <strong>Cadoul oficial:</strong><br>
+    Nu o să te mai enervez o zi întreagă 😇💗
+    <br><br>
+    (Cu excepția cazului în care mă enervezi tu primul. Atunci nu se mai pune.)
+  </p>
+
+</section>
+
+
+      <div class="footer-actions">
+        <a class="btn secondary" href="index.html">⬅ Înapoi</a>
+      </div>
+    </main>
+
+    <script>
+  const correct = { q1: "a", q2: "a", q3: "a", q4: ["a", "b", "c"] };
+
+  const checkBtn = document.getElementById("checkBtn");
+  const resultText = document.getElementById("resultText");
+  const prizeBox = document.getElementById("prizeBox");
+
+  checkBtn.addEventListener("click", () => {
+    const form = document.getElementById("quizForm");
+    let score = 0;
+    const total = Object.keys(correct).length;
+
+    for (const key of Object.keys(correct)) {
+      const selected = form.querySelector(`input[name="${key}"]:checked`);
+      if (!selected) continue;
+
+      const answer = correct[key];
+
+      if (Array.isArray(answer)) {
+        if (answer.includes(selected.value)) score++;
+      } else {
+        if (selected.value === answer) score++;
+      }
+    }
+
+    if (score === total) {
+      resultText.textContent = "Perfect! Ai răspuns corect la toot 🥹💗";
+      prizeBox.style.display = "block";
+      prizeBox.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      prizeBox.style.display = "none";
+      resultText.textContent = `Ai ${score}/${total}. Mai încearcă 😌`;
+    }
+  });
+</script>
+
+  </body>
+</html>

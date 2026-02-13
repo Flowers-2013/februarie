@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadou 1 💝</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+  (function () {
+    const parolaCorecta = "sakura14";   // <- aici o schimbi
+    const intrare = prompt("Parola pentru acces 💗");
+
+    if (intrare !== parolaCorecta) {
+      document.body.innerHTML = `
+        <main style="min-height:100vh;display:grid;place-items:center;font-family:system-ui;text-align:center;padding:24px;">
+          <div style="max-width:520px;">
+            <h1 style="margin:0 0 10px;">Acces interzis 😌</h1>
+            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita 🩷</p>
+          </div>
+        </main>
+      `;
+    }
+  })();
+</script>
+
+    <main class="container page">
+      <header class="header">
+        <div class="badge">💝 CADOUL 1</div>
+        <h1>Open when…</h1>
+        <p class="subtitle">
+          Apasă pe fiecare “plic” ca să vezi surpriza dinăuntru 💗
+        </p>
+      </header>
+
+      <section class="grid-open">
+        <details class="open-card">
+          <summary class="open-summary">🌧️ Open when you’re sad</summary>
+         <div class="open-content">
+  <video class="open-media" src="img/sad.mp4" autoplay loop muted playsinline controls></video>
+  <p class="open-text">   💗 No reason to be sad. Uită-te la pisica asta până zâmbești, și dacă nu merge, vin eu la tine.</p>
+</div>
+
+        </details>
+
+        <details class="open-card">
+          <summary class="open-summary">🫶 Open when you miss me</summary>
+          <div class="open-content">
+            <img src="img/miss.jpeg" alt="Open when you miss me" />
+            <p class="open-text">⭐O poza unde eu arat mai bine decat tine</p>
+          </div>
+        </details>
+
+        <details class="open-card">
+          <summary class="open-summary">🧠 Open when you’re supărat.</summary>
+          <div class="open-content">
+            <img src="img/stressed.jpeg" alt="Open when you're stressed" />
+            <p class="open-text">🥳Faci o treabă minunată, dar nu uita că eu te enervez și nu ai voie să rămâi supărat pe mine.  💗</p>
+          </div>
+        </details>
+
+        <details class="open-card">
+          <summary class="open-summary">🔥 Open when you need motivation</summary>
+          <div class="open-content">
+            <img src="img/motivation.jpeg" alt="Open when you need motivation" />
+            <p class="open-text">✨Pisici și EUUUU!  </p>
+          </div>
+        </details>
+      </section>
+
+      <div class="footer-actions">
+        <a class="btn secondary" href="index.html">⬅ Înapoi</a>
+      </div>
+    </main>
+  </body>
+</html>

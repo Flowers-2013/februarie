@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Februarie 💗</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+  (function () {
+    const parolaCorecta = "sakura14";   // <- aici o schimbi
+    const intrare = prompt("Parola pentru acces 💗");
+
+    if (intrare !== parolaCorecta) {
+      document.body.innerHTML = `
+        <main style="min-height:100vh;display:grid;place-items:center;font-family:system-ui;text-align:center;padding:24px;">
+          <div style="max-width:520px;">
+            <h1 style="margin:0 0 10px;">Acces interzis 😌</h1>
+            <p style="margin:0;opacity:.75;">Hint: întreabă-ți iubita 🩷</p>
+          </div>
+        </main>
+      `;
+    }
+  })();
+</script>
+    <main class="container">
+      <header class="header">
+        <div class="badge">💗 Valentine’s special</div>
+        <h1>For youuuu</h1>
+        <p class="subtitle">
+          Am pregătit două cadouri. Alege unul (sau pe amândouă 😌) și deschide-le.
+        </p>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card-head">
+            <h2>Cadou 1</h2>
+            <span class="small">✨ mesaj</span>
+          </div>
+
+          <div class="photo">
+            <img src="img/cadou1.jpeg" alt="Cadou 1" />
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="cadou1.html">Deschide Cadoul 1 →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h2>Cadou 2</h2>
+            <span class="small">💌 surpriză</span>
+          </div>
+
+          <div class="photo">
+            <img src="img/cadou2.jpeg" alt="Cadou 2" />
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="cadou2.html">Deschide Cadoul 2 →</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
